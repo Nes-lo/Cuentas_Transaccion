@@ -16,14 +16,14 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name="clientes")
-public class Cliente implements Serializable {
+@Table(name="customers")
+public class Customer implements Serializable {
 
     @Id
     @NotEmpty
-    private Integer cedula;
+    private Integer identification;
     @NotEmpty
-    private String nombre;
+    private String name;
     private String email;
     @Column(name="create_at")
     @Temporal(TemporalType.DATE)
