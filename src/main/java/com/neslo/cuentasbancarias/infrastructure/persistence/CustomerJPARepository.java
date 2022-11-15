@@ -20,7 +20,8 @@ public class CustomerJPARepository implements ICustomerRepository {
     }
 
     @Override
-    public void save(Customer customer) {
-
+    public Customer save(Customer customer) {
+     clienteRepository.save(customer);
+        return customer;
     }
 }

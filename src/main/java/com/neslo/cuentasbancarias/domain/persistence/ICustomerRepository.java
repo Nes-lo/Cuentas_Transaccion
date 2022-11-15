@@ -7,5 +7,5 @@ import java.util.List;
 public interface ICustomerRepository {
     public List<Customer> findAll();
 
-    public void save(Customer customer);
+    public Customer save(Customer customer);
 }
