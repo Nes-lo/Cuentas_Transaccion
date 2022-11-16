@@ -2,7 +2,7 @@ plugins {
     id 'java'
     id 'idea'
     id 'org.springframework.boot' version '2.7.5'
-    id 'io.spring.dependency-management' version '1.0.14.RELEASE'
+    id 'io.spring.dependency-management' version '1.1.0'
 }
 
 group 'com.neslo'
@@ -28,9 +28,12 @@ ext {
     mockitoVersion = '4.8.0'
 }
 dependencies {
+
+
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-devtools'
-    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+   implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+
     implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.25'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 
@@ -60,8 +63,8 @@ dependencies {
     compile("org.springframework.boot:spring-boot-devtools")
     testCompile('org.springframework.boot:spring-boot-starter-test')
 
-
-    implementation group: 'org.thymeleaf', name: 'thymeleaf', version: '2.0.5'
+   // implementation group: 'org.thymeleaf', name: 'thymeleaf', version: '2.0.5'  --- no usar no funciona
+   
 }
 
  */

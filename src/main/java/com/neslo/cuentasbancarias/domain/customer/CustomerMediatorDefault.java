@@ -1,8 +1,12 @@
 package com.neslo.cuentasbancarias.domain.customer;
 
-import com.neslo.cuentasbancarias.domain.model.Customer;
 import com.neslo.cuentasbancarias.domain.persistence.ICustomerRepository;
+import com.neslo.cuentasbancarias.infrastructure.model.CustomerDTO;
+import org.springframework.stereotype.Component;
 
+import java.util.List;
+
+@Component
 public class CustomerMediatorDefault implements ICustomerMediator {
 
     private final ICustomerRepository iCustomerRepository;
@@ -12,12 +16,14 @@ public class CustomerMediatorDefault implements ICustomerMediator {
     }
 
     @Override
-    public Customer create(Customer customer) {
-        return iCustomerRepository.save(customer);
+    public CustomerDTO create(CustomerDTO customerDTO) {
+        return iCustomerRepository.save(customerDTO);
     }
 
     @Override
-    public Customer getCustomerByIdentification(Integer identificatio) {
-        return null;
+    public List<CustomerDTO> findAllCustomers() {
+        return iCustomerRepository.findAll();
     }
+
+
 }

@@ -16,7 +16,10 @@ import java.util.Date;
 @AllArgsConstructor
 @Entity
 @Table(name="customers")
-public class CustomerDTO implements Serializable {
+public class CustomerDTO implements Serializable{
+
+    private static final long serialVersionUID = 1L;
+
     @Id
     @NotEmpty
     private Integer identification;
@@ -26,4 +29,9 @@ public class CustomerDTO implements Serializable {
     @Column(name="create_at")
     @Temporal(TemporalType.DATE)
     private Date createAt;
+
+    @PrePersist
+    public void prePersist() {
+        createAt=new Date();
+    }
 }

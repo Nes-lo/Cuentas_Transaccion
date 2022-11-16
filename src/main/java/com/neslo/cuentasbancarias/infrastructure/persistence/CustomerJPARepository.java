@@ -2,6 +2,7 @@ package com.neslo.cuentasbancarias.infrastructure.persistence;
 
 import com.neslo.cuentasbancarias.domain.model.Customer;
 import com.neslo.cuentasbancarias.domain.persistence.ICustomerRepository;
+import com.neslo.cuentasbancarias.infrastructure.model.CustomerDTO;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,13 +16,13 @@ public class CustomerJPARepository implements ICustomerRepository {
     }
 
     @Override
-    public List<Customer> findAll() {
-        return null;
+    public List<CustomerDTO> findAll() {
+        return clienteRepository.findAll();
     }
 
     @Override
-    public Customer save(Customer customer) {
-     clienteRepository.save(customer);
-        return customer;
+    public CustomerDTO save(CustomerDTO customerDTO) {
+     clienteRepository.save(customerDTO);
+        return customerDTO;
     }
 }
