@@ -7,7 +7,11 @@ import java.util.List;
 
 public interface ICustomerMediator {
 
-  CustomerDTO create(CustomerDTO customerDTO);
+  public CustomerDTO create(CustomerDTO customerDTO);
+
+  public CustomerDTO findById(Integer idetification);
+
+  public void delete(Integer identification);
   public List<CustomerDTO> findAllCustomers();
 
 }

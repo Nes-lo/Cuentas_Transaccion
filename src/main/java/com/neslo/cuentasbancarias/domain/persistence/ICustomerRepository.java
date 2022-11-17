@@ -9,4 +9,8 @@ public interface ICustomerRepository {
     public List<CustomerDTO> findAll();
 
     public CustomerDTO save(CustomerDTO  customerDTO);
+
+    public CustomerDTO findById(Integer identification);
+
+    public void delete(Integer identification);
 }

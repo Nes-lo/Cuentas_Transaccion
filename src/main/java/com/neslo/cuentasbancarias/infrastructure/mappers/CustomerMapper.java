@@ -3,6 +3,11 @@ package com.neslo.cuentasbancarias.infrastructure.mappers;
 import com.neslo.cuentasbancarias.domain.model.Customer;
 import com.neslo.cuentasbancarias.infrastructure.model.CustomerDTO;
 
+import java.util.List;
+import java.util.function.Function;
+
+import static java.util.stream.Collectors.toList;
+
 public class CustomerMapper {
 
 
