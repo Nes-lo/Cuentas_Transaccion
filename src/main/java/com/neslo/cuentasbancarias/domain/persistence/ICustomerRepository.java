@@ -1,6 +1,5 @@
 package com.neslo.cuentasbancarias.domain.persistence;
 
-import com.neslo.cuentasbancarias.domain.model.Customer;
 import com.neslo.cuentasbancarias.infrastructure.model.CustomerDTO;
 
 import java.util.List;

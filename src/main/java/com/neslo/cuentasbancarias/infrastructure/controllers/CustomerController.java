@@ -20,7 +20,6 @@ import javax.validation.Valid;
 import java.util.List;
 import java.util.Map;
 
-
 import static java.util.stream.Collectors.toList;
 
 @Controller
@@ -43,6 +42,7 @@ public class CustomerController {
                  .map(CustomerMapper::customer)
                  .collect(toList());
         model.addAttribute("customers",customerList);
+        System.out.println("lis");
         return "views/customer/listar";
     }
 
@@ -58,13 +58,20 @@ public class CustomerController {
 
     @RequestMapping(value="/save", method=RequestMethod.POST)
     public String save(@Valid Customer customer, BindingResult result, Model model, RedirectAttributes flash, SessionStatus status) {
-
+        System.out.println("F"+result.hasErrors());
         if(result.hasErrors()) {
-            model.addAttribute("title","Formulario de Cliente");
+           /*
+           una opcion manual para enviar los mensajes de error
+           model.addAttribute("title","Formulario de Cliente");
+            Map<String,String> errores=new HashMap<>();
+            result.getFieldErrors().forEach(err->{
+                errores.put(err.getField(),"El campo ".concat(err.getField()).concat(" ").concat(err.getDefaultMessage()));
+            });
+            model.addAttribute("error",errores);*/
             return "views/customer/frmCreate";
         }
        // String mensajeFlash=(customer.getIdentification()!=null)?"Cliente editado con exito":"Cliente creado con exito";
-        String mensajeFlash="cliente guardado";
+        String mensajeFlash="Cliente guardado con exito";
         iCustomerMediator.create(CustomerMapper.customerDTO(customer));
         status.setComplete();
         flash.addFlashAttribute("success",mensajeFlash);
@@ -78,6 +85,8 @@ public class CustomerController {
         if(identification>0) {
             customerDTO=iCustomerMediator.findById(identification);
             if(customerDTO==null) {
+
+
                 flash.addFlashAttribute("error","El ID del cliente no existe en la BBDD");
                 return "redirect:/customer/list";
             }

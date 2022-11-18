@@ -21,9 +21,7 @@ public class CustomerDTO implements Serializable{
     private static final long serialVersionUID = 1L;
 
     @Id
-    @NotEmpty
     private Integer identification;
-    @NotEmpty
     private String name;
     private String email;
     @Column(name="create_at")
