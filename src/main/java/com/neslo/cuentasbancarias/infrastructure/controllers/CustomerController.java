@@ -1,7 +1,7 @@
 package com.neslo.cuentasbancarias.infrastructure.controllers;
 
 
-import com.neslo.cuentasbancarias.domain.customer.ICustomerMediator;
+import com.neslo.cuentasbancarias.domain.customer.interfaces.ICustomerMediator;
 import com.neslo.cuentasbancarias.domain.model.Customer;
 import com.neslo.cuentasbancarias.infrastructure.mappers.CustomerMapper;
 import com.neslo.cuentasbancarias.infrastructure.model.CustomerDTO;

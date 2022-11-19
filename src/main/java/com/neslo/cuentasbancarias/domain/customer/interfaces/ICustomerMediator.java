@@ -1,4 +1,4 @@
-package com.neslo.cuentasbancarias.domain.customer;
+package com.neslo.cuentasbancarias.domain.customer.interfaces;
 
 
 import com.neslo.cuentasbancarias.infrastructure.model.CustomerDTO;

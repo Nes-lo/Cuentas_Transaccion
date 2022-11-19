@@ -1,4 +1,4 @@
-package com.neslo.cuentasbancarias.infrastructure.persistence;
+package com.neslo.cuentasbancarias.infrastructure.persistence.interfaces;
 
 
 import com.neslo.cuentasbancarias.infrastructure.model.CustomerDTO;
