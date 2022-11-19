@@ -1,7 +1,7 @@
 package com.neslo.cuentasbancarias.infrastructure.controllers;
 
 
-import com.neslo.cuentasbancarias.domain.customer.interfaces.ICustomerMediator;
+import com.neslo.cuentasbancarias.domain.mediators.interfaces.ICustomerMediator;
 import com.neslo.cuentasbancarias.domain.model.Customer;
 import com.neslo.cuentasbancarias.infrastructure.mappers.CustomerMapper;
 import com.neslo.cuentasbancarias.infrastructure.model.CustomerDTO;
@@ -42,7 +42,6 @@ public class CustomerController {
                  .map(CustomerMapper::customer)
                  .collect(toList());
         model.addAttribute("customers",customerList);
-        System.out.println("lis");
         return "views/customer/listar";
     }
 
@@ -58,8 +57,7 @@ public class CustomerController {
 
     @RequestMapping(value="/save", method=RequestMethod.POST)
     public String save(@Valid Customer customer, BindingResult result, Model model, RedirectAttributes flash, SessionStatus status) {
-        System.out.println("F"+result.hasErrors());
-        if(result.hasErrors()) {
+         if(result.hasErrors()) {
            /*
            una opcion manual para enviar los mensajes de error
            model.addAttribute("title","Formulario de Cliente");

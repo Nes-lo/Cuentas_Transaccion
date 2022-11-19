@@ -2,6 +2,7 @@ package com.neslo.cuentasbancarias.infrastructure.persistence;
 
 import com.neslo.cuentasbancarias.domain.persistence.IAccountTypeRepository;
 import com.neslo.cuentasbancarias.infrastructure.model.AccountTypeDTO;
+import com.neslo.cuentasbancarias.infrastructure.persistence.interfaces.IAccountTypeJPARepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +12,7 @@ import java.util.List;
 @AllArgsConstructor
 public class AccountTypeJPARespository implements IAccountTypeRepository {
 
-    private final IAccountTypeRepository accountTypeRepository;
+    private final IAccountTypeJPARepository accountTypeRepository;
 
     @Override
     public List<AccountTypeDTO> findAll() {
@@ -25,12 +26,12 @@ public class AccountTypeJPARespository implements IAccountTypeRepository {
     }
 
     @Override
-    public AccountTypeDTO findById(Byte idTypeAccount) {
-        return accountTypeRepository.findById(idTypeAccount);
+    public AccountTypeDTO findById(Long idTypeAccount) {
+        return accountTypeRepository.findById(idTypeAccount).orElse(null);
     }
 
     @Override
-    public void delete(Byte idTypeAccount) {
-      accountTypeRepository.delete(idTypeAccount);
+    public void delete(Long idTypeAccount) {
+      accountTypeRepository.deleteById(idTypeAccount);
     }
 }

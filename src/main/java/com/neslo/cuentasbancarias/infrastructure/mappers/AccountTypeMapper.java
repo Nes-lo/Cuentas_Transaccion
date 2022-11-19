@@ -10,7 +10,8 @@ public class AccountTypeMapper {
         public static AccountType accountType(AccountTypeDTO accountTypeDTO){
 
             AccountType accountType=new AccountType();
-            accountType.setNameType(accountType.getNameType());
+            accountType.setIdAccountType(accountTypeDTO.getIdAccountType());
+            accountType.setNameType(accountTypeDTO.getNameType());
 
             return accountType;
 

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout::head">
+
+
+</head>
+<body>
+
+<header th:replace="layout/layout::header"></header>
+
+<div class="container py-4">
+    <div class="card bg-light">
+        <div class="card-header" th:text="${title}"></div>
+        <div class="card-body">
+
+            <h4 class="card-title">
+                <a class="btn btn-secondary btn-xs" th:href="@{/accounttype/create}">Crear
+                    Tipo de Cuenta</a>
+            </h4>
+
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>ID TIPO DE CUENTA</th>
+                    <th>NOMBRE</th>
+                    <th>EDITAR</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="accounttype: ${accounttype}">
+                    <td th:text="${accounttype.idAccountType}"></td>
+                    <td th:text="${accounttype.nameType}"></td>
+                    <td><a class="btn btn-primary btn-xs"
+                           th:href="@{/accounttype/edit/}+ ${accounttype.idAccountType}" th:text="'editar'"></a></td>
+
+                </tr>
+
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</div>
+
+<footer th:replace="layout/layout::footer"></footer>
+
+</body>
+</html>

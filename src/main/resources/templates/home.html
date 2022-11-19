@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout::head">
+
+</head>
+<body>
+
+<header th:replace="layout/layout::header"></header>
+
+
+<div class="container py-4">
+    <div class="card bg-light">
+        <div class="card-header" th:text="${title}"></div>
+        <div class="card-body">
+
+            <table class="table table-striped">
+              <tbody>
+                <tr>
+                    <td><img th:src="@{/images/60026.jpg}" alt="Index" th:width="611" th:height="500" /><br>
+                        <a href="https://www.freepik.es/vector-gratis/banca-linea-telefonos-inteligentes_5722431.htm#query=transferencia&position=1&from_view=keyword">
+                            Imagen de gstudioimagen</a> en Freepik</td>
+                    <td>
+                        <br><br><br><br><br><br>
+                        <h1 style="text-aling:center" class="text-info">Sistema de Cuentas Bancarias  </h1>
+
+
+
+                   </td>
+
+
+                </tr>
+
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</div>
+<footer th:replace="layout/layout::footer"></footer>
+
+</body>
+</html>

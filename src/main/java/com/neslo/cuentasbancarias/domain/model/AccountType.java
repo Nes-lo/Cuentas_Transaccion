@@ -14,7 +14,7 @@ import javax.validation.constraints.Size;
 @AllArgsConstructor
 public class AccountType {
 
-    private Byte idTypeAccount;
+    private Long idAccountType;
     @NotEmpty
     @Size(min = 10, max = 30)
     private String nameType;

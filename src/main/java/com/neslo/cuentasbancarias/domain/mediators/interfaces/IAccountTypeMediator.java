@@ -1,4 +1,4 @@
-package com.neslo.cuentasbancarias.domain.customer.interfaces;
+package com.neslo.cuentasbancarias.domain.mediators.interfaces;
 
 import com.neslo.cuentasbancarias.infrastructure.model.AccountTypeDTO;
 
@@ -8,6 +8,6 @@ public interface IAccountTypeMediator {
 
     public List<AccountTypeDTO> findAll();
     public AccountTypeDTO save(AccountTypeDTO accountTypeDTO);
-    public AccountTypeDTO findById(Byte idTypeAccount);
-    public void delete(Byte idTypeAccount);
+    public AccountTypeDTO findById(Long idTypeAccount);
+    public void delete(Long idTypeAccount);
 }

@@ -1,6 +1,6 @@
-package com.neslo.cuentasbancarias.domain.customer;
+package com.neslo.cuentasbancarias.domain.mediators;
 
-import com.neslo.cuentasbancarias.domain.customer.interfaces.IAccountTypeMediator;
+import com.neslo.cuentasbancarias.domain.mediators.interfaces.IAccountTypeMediator;
 import com.neslo.cuentasbancarias.domain.persistence.IAccountTypeRepository;
 import com.neslo.cuentasbancarias.infrastructure.model.AccountTypeDTO;
 import lombok.AllArgsConstructor;
@@ -19,16 +19,17 @@ public class AccountTypeMediatorDefault implements IAccountTypeMediator {
 
     @Override
     public AccountTypeDTO save(AccountTypeDTO accountTypeDTO) {
+
         return iAccountTypeRepository.save(accountTypeDTO);
     }
 
     @Override
-    public AccountTypeDTO findById(Byte idTypeAccount) {
+    public AccountTypeDTO findById(Long idTypeAccount) {
         return iAccountTypeRepository.findById(idTypeAccount);
     }
 
     @Override
-    public void delete(Byte idTypeAccount) {
+    public void delete(Long idTypeAccount) {
         iAccountTypeRepository.delete(idTypeAccount);
 
     }

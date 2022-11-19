@@ -9,7 +9,7 @@ public interface IAccountTypeRepository {
 
     public List<AccountTypeDTO> findAll();
     public AccountTypeDTO save(AccountTypeDTO accountTypeDTO);
-    public AccountTypeDTO findById(Byte idTypeAccount);
-    public void delete(Byte idTypeAccount);
+    public AccountTypeDTO findById(Long idTypeAccount);
+    public void delete(Long idTypeAccount);
 
 }

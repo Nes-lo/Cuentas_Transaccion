@@ -2,6 +2,7 @@ package com.neslo.cuentasbancarias.infrastructure.persistence;
 
 import com.neslo.cuentasbancarias.domain.persistence.IAccountRepository;
 import com.neslo.cuentasbancarias.infrastructure.model.AccountDTO;
+import com.neslo.cuentasbancarias.infrastructure.persistence.interfaces.IAccountJPARepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +13,7 @@ import java.util.UUID;
 @AllArgsConstructor
 public class AccountJPARepository implements IAccountRepository {
 
-    private final IAccountRepository accountRepository;
+    private final IAccountJPARepository accountRepository;
 
 
     @Override
@@ -28,6 +29,6 @@ public class AccountJPARepository implements IAccountRepository {
 
     @Override
     public AccountDTO findById(UUID accountNumber) {
-        return accountRepository.findById(accountNumber);
+        return accountRepository.findById(accountNumber).orElse(null);
     }
 }

@@ -21,7 +21,7 @@ public class AccountTypeDTO implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id_type_account")
-    private Byte idTypeAccount;
+    private Long idAccountType;
     @Column(name="name_type")
     private String nameType;
 }

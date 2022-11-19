@@ -1,6 +1,6 @@
-package com.neslo.cuentasbancarias.domain.customer;
+package com.neslo.cuentasbancarias.domain.mediators;
 
-import com.neslo.cuentasbancarias.domain.customer.interfaces.ICustomerMediator;
+import com.neslo.cuentasbancarias.domain.mediators.interfaces.ICustomerMediator;
 import com.neslo.cuentasbancarias.domain.persistence.ICustomerRepository;
 import com.neslo.cuentasbancarias.infrastructure.model.CustomerDTO;
 import lombok.AllArgsConstructor;

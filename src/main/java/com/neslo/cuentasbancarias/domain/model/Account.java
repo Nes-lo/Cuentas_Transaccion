@@ -18,7 +18,7 @@ public class Account {
 
 
     private UUID accountNumber;
-    private Byte idTypeAccount;
+    private Long idTypeAccount;
     private Integer identificationCustomer;
     private Date createDateAccount;
     @NotNull

@@ -26,7 +26,7 @@ public class AccountDTO implements Serializable {
     @Column(name="account_number")
     private UUID accountNumber;
     @Column(name="id_type_account")
-    private Byte idTypeAccount;
+    private Long idTypeAccount;
     @Column(name="identification_customer")
     private Integer identificationCustomer;
     @Column(name="create_date_account")
@@ -41,10 +41,10 @@ public class AccountDTO implements Serializable {
     public void generateAccount(){
         this.accountNumber=UUID.randomUUID();
     }
-    @PrePersist
-    public void prePersist() {
-        createDateAccount=new Date();
-    }
+   // @PrePersist
+   // public void prePersist() {
+       // createDateAccount=new Date();
+  //  }
 
 
 }

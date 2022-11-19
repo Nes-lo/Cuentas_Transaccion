@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout::head">
+</head>
+<body>
+<header th:replace="layout/layout::header"></header>
+
+<div class="container  py-4">
+    <div class="card bg-dark text-white">
+        <div class="card-header" th:text="${title}"></div>
+        <div class="card-body">
+
+            <form th:action="@{/accounttype/save}" th:object="${accounttype}" method="post">
+
+                <div class="form-group">
+                    <label class="col-sm-2 col-form-label">NOMBRE TIPO</label>
+                    <div class="col-sm-6">
+                        <input type="text" th:field="*{nameType}" class="form-control" />
+                     </div>
+                    <small class="form-text text-danger"
+                           th:if="${#fields.hasErrors('nameType')}" th:errors="*{name}"></small>
+
+                </div>
+                <br>
+                <div class="form-group">
+                    <div class="col-sm-6">
+                        <input type="submit" value="Guardar"
+                               class="btn btn-secondary" />
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<footer th:replace="layout/layout::footer"></footer>
+</body>
+</html>
+
+
