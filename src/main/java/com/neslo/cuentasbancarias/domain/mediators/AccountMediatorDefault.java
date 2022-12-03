@@ -25,7 +25,12 @@ public class AccountMediatorDefault implements IAccountMediator {
     }
 
     @Override
-    public AccountDTO findById(UUID accountNumber) {
+    public AccountDTO findById(String accountNumber) {
         return iAccountRepository.findById(accountNumber);
+    }
+
+    @Override
+    public List<AccountDTO> findByIdentification(Integer identificationCustomer) {
+        return iAccountRepository.findByIdentification(identificationCustomer);
     }
 }

@@ -26,6 +26,7 @@
                     <th>EMAIL</th>
                     <th>FECHA</th>
                     <th>EDITAR</th>
+                    <th>CUENTAS</th>
                     <th>ELIMINAR</th>
                 </tr>
                 </thead>
@@ -37,6 +38,8 @@
                     <td th:text="${customer.createAt}"></td>
                     <td><a class="btn btn-primary btn-xs"
                            th:href="@{/customer/edit/}+ ${customer.identification}" th:text="'editar'"></a></td>
+                    <td><a class="btn btn-primary btn-xs"
+                           th:href="@{/account/list/}+ ${customer.identification}" th:text="'cuentas'"></a></td>
                     <td><a class="btn btn-danger btn-xs"
                            th:href="@{/customer/delete/}+ ${customer.identification}" th:text="'eliminar'"
                            onclick="return confirm('Estas seguro?');"></a></td>

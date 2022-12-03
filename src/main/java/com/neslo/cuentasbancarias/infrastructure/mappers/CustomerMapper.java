@@ -1,5 +1,6 @@
 package com.neslo.cuentasbancarias.infrastructure.mappers;
 
+import com.neslo.cuentasbancarias.domain.model.Account;
 import com.neslo.cuentasbancarias.domain.model.Customer;
 import com.neslo.cuentasbancarias.infrastructure.model.CustomerDTO;
 
@@ -19,6 +20,12 @@ public class CustomerMapper {
 
     }
 
+    public  static Customer customerId(Integer identification){
+        Customer customer=new Customer();
+        customer.setIdentification(identification);
+
+        return customer;
+    }
     public static CustomerDTO customerDTO(Customer customer){
 
 

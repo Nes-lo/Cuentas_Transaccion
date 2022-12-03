@@ -22,11 +22,11 @@ public class AccountDTO implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
-    @Type(type = "org.hibernate.type.UUIDCharType")
+  //  @Type(type = "org.hibernate.type.UUIDCharType")
     @Column(name="account_number")
-    private UUID accountNumber;
+    private String accountNumber;
     @Column(name="id_type_account")
-    private Long idTypeAccount;
+    private Long idAccountType;
     @Column(name="identification_customer")
     private Integer identificationCustomer;
     @Column(name="create_date_account")
@@ -36,15 +36,14 @@ public class AccountDTO implements Serializable {
     private Double balanceAccount;
     @Column(name="active_account")
     private Boolean activeAccount;
-
+    @ManyToOne
+    @JoinColumn(name="id_type_accounts")
+    private AccountTypeDTO accountTypeDTO;
+    @ManyToOne
+    @JoinColumn(name="identification_customers")
+    private CustomerDTO customerDTO;
     @PrePersist
     public void generateAccount(){
-        this.accountNumber=UUID.randomUUID();
+        this.accountNumber=UUID.randomUUID().toString().substring(24);
     }
-   // @PrePersist
-   // public void prePersist() {
-       // createDateAccount=new Date();
-  //  }
-
-
 }

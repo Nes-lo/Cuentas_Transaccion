@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout::head">
+
+
+</head>
+<body>
+
+<header th:replace="layout/layout::header"></header>
+
+
+<div class="container py-4">
+    <div class="card bg-light">
+        <div class="card-header" th:text="${title0}"></div>
+        <div class="card-body">
+
+
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Identificacion</th>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr >
+                    <td th:text="${customer.identification}"></td>
+                    <td th:text="${customer.name}"></td>
+                    <td th:text="${customer.email}"></td>
+
+                </tr>
+
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="container py-4">
+    <div class="card bg-light">
+        <div class="card-header" th:text="${title}"></div>
+        <div class="card-body">
+
+            <h4 class="card-title">
+                <a class="btn btn-secondary btn-xs" th:href="@{/account/create/}+${customer.identification}">Crear
+                     Cuenta</a>
+            </h4>
+
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Numero de Cuenta</th>
+                    <th>Tipo de Cuenta</th>
+                    <th>Saldo</th>
+                    <th>Estado de Cuenta</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="account: ${account}">
+                    <td th:text="${account.accountNumber}"></td>
+                    <td th:text="${account.idAccountType}"></td>
+                    <td th:text="${account.balanceAccount}"></td>
+                    <td th:text="${account.activeAccount}"></td>
+
+
+                </tr>
+
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</div>
+
+<footer th:replace="layout/layout::footer"></footer>
+
+</body>
+</html>

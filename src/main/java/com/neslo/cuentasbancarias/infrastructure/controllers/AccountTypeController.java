@@ -18,7 +18,9 @@ import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static java.util.stream.Collectors.toList;
 
@@ -60,7 +62,13 @@ public class AccountTypeController {
 
     @RequestMapping(value="/save", method=RequestMethod.POST)
     public String save(@Valid AccountType accountType, BindingResult result, Model model, RedirectAttributes flash, SessionStatus status) {
+        System.out.println("Esto es "+result.hasErrors());
         if(result.hasErrors()) {
+            Map<String,String> errores=new HashMap<>();
+            result.getFieldErrors().forEach(err->{
+                errores.put(err.getField(),"El campo ".concat(err.getField()).concat(" ").concat(err.getDefaultMessage()));
+            });
+            model.addAttribute("error",errores);
             model.addAttribute("title", "Formulario Tipo de Cuentas");
             return "views/accounttype/frmCreateType";
         }

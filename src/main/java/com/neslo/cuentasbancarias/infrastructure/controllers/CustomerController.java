@@ -58,14 +58,9 @@ public class CustomerController {
     @RequestMapping(value="/save", method=RequestMethod.POST)
     public String save(@Valid Customer customer, BindingResult result, Model model, RedirectAttributes flash, SessionStatus status) {
          if(result.hasErrors()) {
-           /*
-           una opcion manual para enviar los mensajes de error
-           model.addAttribute("title","Formulario de Cliente");
-            Map<String,String> errores=new HashMap<>();
-            result.getFieldErrors().forEach(err->{
-                errores.put(err.getField(),"El campo ".concat(err.getField()).concat(" ").concat(err.getDefaultMessage()));
-            });
-            model.addAttribute("error",errores);*/
+
+
+             model.addAttribute("title","Formulario de Cliente");
             return "views/customer/frmCreate";
         }
        // String mensajeFlash=(customer.getIdentification()!=null)?"Cliente editado con exito":"Cliente creado con exito";

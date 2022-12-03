@@ -13,13 +13,11 @@
             <form th:action="@{/accounttype/save}" th:object="${accounttype}" method="post">
 
                 <div class="form-group">
-                    <label class="col-sm-2 col-form-label">NOMBRE TIPO</label>
-                    <div class="col-sm-6">
+                     <label class="col-sm-2 col-form-label">NOMBRE TIPO</label>
+                     <div class="col-sm-6">
                         <input type="text" th:field="*{nameType}" class="form-control" />
                      </div>
-                    <small class="form-text text-danger"
-                           th:if="${#fields.hasErrors('nameType')}" th:errors="*{name}"></small>
-
+                    <div th:if="${error != null && error.containsKey('nameType')}" th:text="${error.nameType}"></div>
                 </div>
                 <br>
                 <div class="form-group">

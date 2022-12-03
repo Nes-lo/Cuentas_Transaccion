@@ -7,7 +7,6 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.UUID;
 
 @Service
 @AllArgsConstructor
@@ -28,7 +27,12 @@ public class AccountJPARepository implements IAccountRepository {
     }
 
     @Override
-    public AccountDTO findById(UUID accountNumber) {
+    public AccountDTO findById(String accountNumber) {
         return accountRepository.findById(accountNumber).orElse(null);
+    }
+    public List<AccountDTO> findByIdentification(Integer identification){
+       return accountRepository.findByIdentificationCustomer(identification);
+
+
     }
 }

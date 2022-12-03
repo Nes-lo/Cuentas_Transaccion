@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -24,9 +25,15 @@ public class CustomerJPARepository implements ICustomerRepository {
     @Override
     @Transactional()
     public CustomerDTO save(CustomerDTO customerDTO) {
+        customerDTO.setCreateAt(prePersist());
      customerRepository.save(customerDTO);
         return customerDTO;
     }
+
+    public Date prePersist() {
+       return new Date();
+          }
+
 
     @Override
     @Transactional(readOnly=true)

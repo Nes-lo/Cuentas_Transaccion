@@ -9,10 +9,14 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @AllArgsConstructor
+//@NoArgsConstructor(force = true)
 @Component
 public class CustomerMediatorDefault implements ICustomerMediator {
 
     private final ICustomerRepository iCustomerRepository;
+
+
+
 
     @Override
     public CustomerDTO create(CustomerDTO customerDTO) {
